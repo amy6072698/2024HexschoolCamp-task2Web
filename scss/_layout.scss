@@ -1,0 +1,372 @@
+// Global //
+*,*:before,*:after{
+    box-sizing: border-box;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+body,h1,h2,h3,h4,h5,h6,p,a{
+    font-family: $font-family1;
+    font-weight: 400;
+    color: $primary700;
+    line-height: 1.5;
+    text-decoration: none;
+}
+
+// Grid //
+.container{
+    max-width: 1296px;
+    margin: 0 auto;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.col-6{
+    width: 50%;
+}
+
+.d-none{
+    display: none;
+}
+.d-flex{
+    display: flex;
+}
+
+.fxd-c{
+    flex-direction: column;
+}
+
+.jc-center{
+    justify-content: center;
+}
+.jc-sb{
+    justify-content: space-between;
+}
+
+.ai-center{
+    align-items: center;
+}
+
+.mb-8{
+    margin-bottom: 8px;
+}
+.mb-16{
+    margin-bottom: 16px;
+}
+.mb-24{
+    margin-bottom: 24px;
+}
+.mb-80{
+    margin-bottom: 80px;
+}
+
+.ml-16{
+    margin-left: 16px;
+}
+
+.mr-8{
+    margin-right: 8px;
+}
+.mr-40{
+    margin-right: 40px;
+}
+
+.fz-20{
+    font-size: 20px;
+}
+.fz-28{
+    font-size: 28px;
+}
+
+.fw-blod{
+    font-weight: $font-blod;
+}
+
+.color-500{
+    color: $primary500;
+}
+
+.lh-12{
+    line-height: 1.2;
+}
+
+.bdrs-8{
+    border-radius: 8px;
+}
+
+// Button //
+.btn{
+    display: inline-block;
+    padding: 8px 24px;
+    border-radius: 8px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 20px;
+    cursor: pointer;
+    &-outline{
+        background-color: $primary50;
+        border: 1px solid $primary400;
+        transition: all 0.3s;
+        .btn-icon{
+            color: $primary600;
+        }
+        &:hover{
+            background-color: $primary900;
+            border: 1px solid $primary900;
+            color: $primary50;
+            font-weight: $font-blod;
+        }
+        &:hover .btn-icon{
+            color: $primary50;
+        }
+    }   
+}
+
+// Tag //
+.tag{
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1.5;
+    padding: 4px 12px;
+    border-radius: 16px;
+    background-color: $primary200;
+    cursor: pointer;
+    &:not(:last-child){
+        margin-right: 16px;
+    }
+}
+
+// Pages //
+.pages{
+    padding-top: 72px;
+    padding-bottom: 120px;
+    .page{
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 24px;
+        line-height: 1.5;
+        padding: 2px 13px;
+        border-radius: 4px;
+        cursor: pointer;
+        &:not(:last-child){
+            margin-right: 16px;
+        }
+        &:hover{
+            background-color: $primary900;
+            color: $primary50;
+        }
+        &:focus{
+            background-color: $primary900;
+            color: $primary50;
+        }
+    }
+}
+@media(max-width: 768px){
+    .pages{
+        padding-top: 48px;
+        padding-bottom: 80px;
+    }
+}
+
+// Mask //
+.mask{
+    display: none;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    background-color: rgba(0,0,0,0.8);
+}
+
+// Layout //
+// header
+.header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 2;
+    border-bottom: 1px solid $primary200;
+    .header-inner{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 28px 0;
+        .logo{
+            display: block;
+            background-image: url('https://raw.githubusercontent.com/hexschool/2022-web-layout-training/2f8d8c7a6133b448ecff5bf0a3d282b87b7c6a7e/2024%20web-camp/logo.svg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 90px;
+            height: 40px;
+            margin-right: 24.5%;
+        }
+    }
+    .header-navbar{
+        display: flex;
+        gap: 40px;
+        .header-navbar-item{
+            position: relative;
+            .header-navbar-link{
+                color: $primary900;
+                display: block;
+                padding: 4px 8px;
+            }
+            // header-quote
+            &:before{
+                border-left: 1px solid $primary500;
+                left: 0;
+            }
+            &:after{
+                right: 0;
+                border-right: 1px solid $primary500;
+            }
+            &:hover:before{
+                opacity: 1;
+            }
+            &:hover:after{
+                opacity: 1;
+            }
+        }
+    }
+    .toggle-control{
+        display: none;
+        &:checked + .toggle-btn .open{
+            display: none;
+        }
+        &:checked + .toggle-btn .close{
+            display: inline;
+        }
+        &:not(:checked) + .toggle-btn .open{
+            display: inline;
+        }
+        &:not(:checked) + .toggle-btn .close{
+            display: none;
+        }
+    }
+    .toggle-btn{
+        display: none;
+        cursor: pointer;
+        .header-toggle{
+            font-size: 30px;
+            width: 40px;
+            height: 40px;
+        }
+    }
+}
+.header .header-navbar .header-navbar-item:before,
+.header .header-navbar .header-navbar-item:after{
+    content: '';
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    top: 0;    
+    border-top: 1px solid $primary500;
+    -webkit-box-reflect: below 16px;
+    transition: opacity 0.3s;
+    opacity: 0;
+}
+
+@media(max-width: 1400px){
+    .header .header-inner .logo{
+        margin-left: 12px;
+    }
+}
+@media(max-width: 992px){
+    .header{
+        &:has(.header-inner .toggle-control:checked) ~ .header-mask{
+            display: block;
+        }
+        &:has(.header-inner .toggle-control:checked){
+            border-bottom: 0;
+        }
+        .header-inner{
+            justify-content: space-between;
+            padding: 8px 0;
+            .header-navbar{
+                display: none;
+            }
+            .toggle-btn{
+                display: block;
+                margin-right: 12px;
+            }
+            .toggle-control:checked ~ .header-navbar{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                z-index: 1;
+                gap: 10px;
+                padding-top: 40px;
+                padding-bottom: 32px;
+                margin-top: 8px;
+                border-top: 1px solid $primary200;
+            }
+        }
+    }
+}
+
+// footer
+.footer{
+    width: 100%;
+    background-image: url("https://imgur.com/dwfip0c.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 80px 0;
+    .footer-logo{
+        display: inline-block;
+        background-image: url('https://raw.githubusercontent.com/hexschool/2022-web-layout-training/2f8d8c7a6133b448ecff5bf0a3d282b87b7c6a7e/2024%20web-camp/logo.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 120px;
+        height: 54px;
+    }
+    .social{
+        max-width: 306px;
+        .social-btn{
+            display: flex;
+            align-items: center;
+        }
+    }
+    .contact-mail:hover{
+        opacity: 0.8;
+    }
+}
+@media(max-width: 1400px){
+    .footer{
+        padding: 80px 12px;
+    }
+}
+@media(max-width: 767px){
+    .footer{
+        padding: 40px 12px;
+        .jc-sb{
+            justify-content: center;
+        }
+        .contact{
+            width: 100%;
+            text-align: center;
+            margin-bottom: 40px;
+            .contact-para{
+                font-size: 16px;
+                line-height: 1.5;
+                &.mb-24{
+                    margin-top: 4px;
+                }
+            }            
+            .contact-mail{
+                font-size: 16px;
+                line-height: 1.5;
+            }
+        }
+        .social{
+            width: 100%;
+        }
+    }
+}

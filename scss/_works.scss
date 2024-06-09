@@ -1,0 +1,145 @@
+// Works page //
+// banner
+.banner{
+    background-color: $primary100;
+    padding-top: 176px;
+    padding-bottom: 80px;
+    margin-bottom: 120px;
+    .banner-text{
+        z-index: 0;
+        padding: 59px 71px;
+        color: $primary800;
+        text-align: center;
+        position: relative;
+        &:before{
+            content: '';
+            display: inline-block;
+            background-image: url('https://github.com/hexschool/2022-web-layout-training/blob/main/2024%20web-camp/quote-left.png?raw=true');
+            width: 72px;
+            height: 72px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        &:after{
+            content: '';
+            background-image: url('https://github.com/hexschool/2022-web-layout-training/blob/main/2024%20web-camp/quote-right.png?raw=true');
+            width: 72px;
+            height: 72px;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+        .banner-title{
+            font-size: 24px;
+            line-height: 29px;
+            .banner-mark{
+                position: relative;
+            }
+            .mark:after{
+                content: '';
+                width: 148px;
+                height: 8px;
+                background-image: url('https://github.com/hexschool/2022-web-layout-training/blob/main/2024%20web-camp/mark.png?raw=true');
+                background-size: cover;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                z-index: -1;
+            }            
+        }
+    }
+    .banner-list{
+        display: flex;
+        flex-wrap: wrap;
+        .banner-list-item{
+            max-width: 298px;
+            .banner-list-title{
+                color: $primary600;
+                &:after{
+                    content: '';
+                    display: block;
+                    width: 24px;
+                    height: 2px;
+                    background-color: $primary400;
+                    margin: 0 auto;
+                    margin-top: 2px;
+                    margin-bottom: 8px;
+                }
+            }
+            .banner-list-para{
+                text-align: center;
+            }
+        }
+    }
+}
+@media(max-width: 992px){
+    .banner{
+        padding-top: 96px;
+        .banner-text{
+            &:before{
+                position: static;
+            }
+            &:after{
+                display: none;
+            }
+            .wrap{
+                display: block;
+            }
+        }
+    }
+}
+@media(max-width: 767px){
+    .banner{
+        margin-bottom: 80px;
+        .banner-text{
+            padding: 0 10%;
+            &.mb-24{
+                margin-bottom: 40px;
+            }
+            .banner-title{
+                font-size: 20px;
+                line-height: 30px;
+                &.mb-16{
+                    margin-bottom: 8px;
+                }
+                .mark:after{
+                    width: 108px;
+                    height: 6px;
+                }
+            }
+        }
+        .banner-list{
+            .mr-40{
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+// works-list
+.works-list{
+    margin: 0 -12px;
+    .works-list-item{
+        padding: 0 12px;
+    }
+}
+@media(max-width: 1400px){
+    .works-list{
+        margin: 0;
+    }
+}
+@media(max-width: 767px){
+    .works-list{
+        .works-list-item{
+            width: 100%;
+            .mb-24{
+                margin-bottom: 16px;
+            }
+            .mb-80{
+                margin-bottom: 48px;
+            }
+        }
+    }
+}

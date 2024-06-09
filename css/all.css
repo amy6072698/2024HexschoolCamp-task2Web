@@ -1,0 +1,563 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, a {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
+  color: #3B3B3B;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1296px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.d-none {
+  display: none;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.fxd-c {
+  flex-direction: column;
+}
+
+.jc-center {
+  justify-content: center;
+}
+
+.jc-sb {
+  justify-content: space-between;
+}
+
+.ai-center {
+  align-items: center;
+}
+
+.mb-8 {
+  margin-bottom: 8px;
+}
+
+.mb-16 {
+  margin-bottom: 16px;
+}
+
+.mb-24 {
+  margin-bottom: 24px;
+}
+
+.mb-80 {
+  margin-bottom: 80px;
+}
+
+.ml-16 {
+  margin-left: 16px;
+}
+
+.mr-8 {
+  margin-right: 8px;
+}
+
+.mr-40 {
+  margin-right: 40px;
+}
+
+.fz-20 {
+  font-size: 20px;
+}
+
+.fz-28 {
+  font-size: 28px;
+}
+
+.fw-blod {
+  font-weight: 700;
+}
+
+.color-500 {
+  color: #919191;
+}
+
+.lh-12 {
+  line-height: 1.2;
+}
+
+.bdrs-8 {
+  border-radius: 8px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 24px;
+  border-radius: 8px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 20px;
+  cursor: pointer;
+}
+.btn-outline {
+  background-color: #FFFFFF;
+  border: 1px solid #C1C1C1;
+  transition: all 0.3s;
+}
+.btn-outline .btn-icon {
+  color: #5B5B5B;
+}
+.btn-outline:hover {
+  background-color: #000000;
+  border: 1px solid #000000;
+  color: #FFFFFF;
+  font-weight: 700;
+}
+.btn-outline:hover .btn-icon {
+  color: #FFFFFF;
+}
+
+.tag {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1.5;
+  padding: 4px 12px;
+  border-radius: 16px;
+  background-color: #F1F1F1;
+  cursor: pointer;
+}
+.tag:not(:last-child) {
+  margin-right: 16px;
+}
+
+.pages {
+  padding-top: 72px;
+  padding-bottom: 120px;
+}
+.pages .page {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 24px;
+  line-height: 1.5;
+  padding: 2px 13px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.pages .page:not(:last-child) {
+  margin-right: 16px;
+}
+.pages .page:hover {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+.pages .page:focus {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+@media (max-width: 768px) {
+  .pages {
+    padding-top: 48px;
+    padding-bottom: 80px;
+  }
+}
+.mask {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 2;
+  border-bottom: 1px solid #F1F1F1;
+}
+.header .header-inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 28px 0;
+}
+.header .header-inner .logo {
+  display: block;
+  background-image: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/2f8d8c7a6133b448ecff5bf0a3d282b87b7c6a7e/2024%20web-camp/logo.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 90px;
+  height: 40px;
+  margin-right: 24.5%;
+}
+.header .header-navbar {
+  display: flex;
+  gap: 40px;
+}
+.header .header-navbar .header-navbar-item {
+  position: relative;
+}
+.header .header-navbar .header-navbar-item .header-navbar-link {
+  color: #000000;
+  display: block;
+  padding: 4px 8px;
+}
+.header .header-navbar .header-navbar-item:before {
+  border-left: 1px solid #919191;
+  left: 0;
+}
+.header .header-navbar .header-navbar-item:after {
+  right: 0;
+  border-right: 1px solid #919191;
+}
+.header .header-navbar .header-navbar-item:hover:before {
+  opacity: 1;
+}
+.header .header-navbar .header-navbar-item:hover:after {
+  opacity: 1;
+}
+.header .toggle-control {
+  display: none;
+}
+.header .toggle-control:checked + .toggle-btn .open {
+  display: none;
+}
+.header .toggle-control:checked + .toggle-btn .close {
+  display: inline;
+}
+.header .toggle-control:not(:checked) + .toggle-btn .open {
+  display: inline;
+}
+.header .toggle-control:not(:checked) + .toggle-btn .close {
+  display: none;
+}
+.header .toggle-btn {
+  display: none;
+  cursor: pointer;
+}
+.header .toggle-btn .header-toggle {
+  font-size: 30px;
+  width: 40px;
+  height: 40px;
+}
+
+.header .header-navbar .header-navbar-item:before,
+.header .header-navbar .header-navbar-item:after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  top: 0;
+  border-top: 1px solid #919191;
+  -webkit-box-reflect: below 16px;
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+
+@media (max-width: 1400px) {
+  .header .header-inner .logo {
+    margin-left: 12px;
+  }
+}
+@media (max-width: 992px) {
+  .header:has(.header-inner .toggle-control:checked) ~ .header-mask {
+    display: block;
+  }
+  .header:has(.header-inner .toggle-control:checked) {
+    border-bottom: 0;
+  }
+  .header .header-inner {
+    justify-content: space-between;
+    padding: 8px 0;
+  }
+  .header .header-inner .header-navbar {
+    display: none;
+  }
+  .header .header-inner .toggle-btn {
+    display: block;
+    margin-right: 12px;
+  }
+  .header .header-inner .toggle-control:checked ~ .header-navbar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    gap: 10px;
+    padding-top: 40px;
+    padding-bottom: 32px;
+    margin-top: 8px;
+    border-top: 1px solid #F1F1F1;
+  }
+}
+.footer {
+  width: 100%;
+  background-image: url("https://imgur.com/dwfip0c.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 80px 0;
+}
+.footer .footer-logo {
+  display: inline-block;
+  background-image: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/2f8d8c7a6133b448ecff5bf0a3d282b87b7c6a7e/2024%20web-camp/logo.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 120px;
+  height: 54px;
+}
+.footer .social {
+  max-width: 306px;
+}
+.footer .social .social-btn {
+  display: flex;
+  align-items: center;
+}
+.footer .contact-mail:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 1400px) {
+  .footer {
+    padding: 80px 12px;
+  }
+}
+@media (max-width: 767px) {
+  .footer {
+    padding: 40px 12px;
+  }
+  .footer .jc-sb {
+    justify-content: center;
+  }
+  .footer .contact {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .footer .contact .contact-para {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .footer .contact .contact-para.mb-24 {
+    margin-top: 4px;
+  }
+  .footer .contact .contact-mail {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .footer .social {
+    width: 100%;
+  }
+}
+.banner {
+  background-color: #FAFAFA;
+  padding-top: 176px;
+  padding-bottom: 80px;
+  margin-bottom: 120px;
+}
+.banner .banner-text {
+  z-index: 0;
+  padding: 59px 71px;
+  color: #1E1E1E;
+  text-align: center;
+  position: relative;
+}
+.banner .banner-text:before {
+  content: "";
+  display: inline-block;
+  background-image: url("https://github.com/hexschool/2022-web-layout-training/blob/main/2024%20web-camp/quote-left.png?raw=true");
+  width: 72px;
+  height: 72px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.banner .banner-text:after {
+  content: "";
+  background-image: url("https://github.com/hexschool/2022-web-layout-training/blob/main/2024%20web-camp/quote-right.png?raw=true");
+  width: 72px;
+  height: 72px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.banner .banner-text .banner-title {
+  font-size: 24px;
+  line-height: 29px;
+}
+.banner .banner-text .banner-title .banner-mark {
+  position: relative;
+}
+.banner .banner-text .banner-title .mark:after {
+  content: "";
+  width: 148px;
+  height: 8px;
+  background-image: url("https://github.com/hexschool/2022-web-layout-training/blob/main/2024%20web-camp/mark.png?raw=true");
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+}
+.banner .banner-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.banner .banner-list .banner-list-item {
+  max-width: 298px;
+}
+.banner .banner-list .banner-list-item .banner-list-title {
+  color: #5B5B5B;
+}
+.banner .banner-list .banner-list-item .banner-list-title:after {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #C1C1C1;
+  margin: 0 auto;
+  margin-top: 2px;
+  margin-bottom: 8px;
+}
+.banner .banner-list .banner-list-item .banner-list-para {
+  text-align: center;
+}
+
+@media (max-width: 992px) {
+  .banner {
+    padding-top: 96px;
+  }
+  .banner .banner-text:before {
+    position: static;
+  }
+  .banner .banner-text:after {
+    display: none;
+  }
+  .banner .banner-text .wrap {
+    display: block;
+  }
+}
+@media (max-width: 767px) {
+  .banner {
+    margin-bottom: 80px;
+  }
+  .banner .banner-text {
+    padding: 0 10%;
+  }
+  .banner .banner-text.mb-24 {
+    margin-bottom: 40px;
+  }
+  .banner .banner-text .banner-title {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .banner .banner-text .banner-title.mb-16 {
+    margin-bottom: 8px;
+  }
+  .banner .banner-text .banner-title .mark:after {
+    width: 108px;
+    height: 6px;
+  }
+  .banner .banner-list .mr-40 {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+.works-list {
+  margin: 0 -12px;
+}
+.works-list .works-list-item {
+  padding: 0 12px;
+}
+
+@media (max-width: 1400px) {
+  .works-list {
+    margin: 0;
+  }
+}
+@media (max-width: 767px) {
+  .works-list .works-list-item {
+    width: 100%;
+  }
+  .works-list .works-list-item .mb-24 {
+    margin-bottom: 16px;
+  }
+  .works-list .works-list-item .mb-80 {
+    margin-bottom: 48px;
+  }
+}/*# sourceMappingURL=all.css.map */
